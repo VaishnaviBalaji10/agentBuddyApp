@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Agent Buddy</title>
+      <base href="/">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" type="image/x-icon" href="favicon.ico">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+      <script src="https://use.fontawesome.com/4c4329c3b0.js"></script>
+   </head>
+   <body>
+      <main role="main">
+         <section class="text-center">
+            <div class="container">
+               <div class="alert alert-success" id="ribbon" role="alert">
+                  <h4 class="alert-heading"><i class="fa fa-quote-left fa-3x fa-pull-left fa-border" aria-hidden="true"></i>Heads-Up!!</h4>
+                  <p id="tips-block">You've been in same position for too long. Move around!</p>
+                  <hr>
+               </div>
+            </div>
+         </section>
+         <div class="album py-5 bg-light">
+            <div class="container">
+               <div class="row d-flex justify-content-center">
+                  <div class="col-md-4">
+                     <div class="card mb-4 shadow-sm">
+                        <h3 class="text-center bg-info p-2">Heart Rate </h3>
+                        <i class="fa fa-heartbeat fa-5x text-center" aria-hidden="true"></i>
+                        <div class="card-body">
+                           <p class="card-text">Laughing is good for your heart. It gives a boost to your immune system</p>
+                           <div class="d-flex justify-content-between align-items-center">
+                              <div class="btn">
+                                 <!--<button type="button" class="btn btn-sm btn-outline-info" id="heartRate">Actual : 80 </button> -->
+                                 <button type="button" class="btn btn-sm btn-outline-success">Recomended : 60-100</button>
+                                 <button type="button" class="btn btn-sm ">
+                                 <span>Actual :</span>
+                                 <input type="button" class="btn btn-sm btn-outline-info" onchange="displayMessage('heartRate',this)" value="72" id="heart-data">
+                                 </button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="card mb-4 shadow-sm">
+                        <h3 class="text-center bg-info p-2">Call Time</h3>
+                        <i class="fa fa-volume-control-phone fa-5x text-center" aria-hidden="true"></i>
+                        <div class="card-body">
+                           <p class="card-text">Live plants in a work environment help productivity.</p>
+                           <div class="d-flex justify-content-between align-items-center">
+                              <div class="btn">
+                                 <button type="button" class="btn btn-sm btn-outline-info" id="callTime">Expected : 180 mins</button>
+                                 <button type="button" class="btn btn-sm ">
+                                 <span>Current(sec)</span>
+                                 <input type="button" onchange="displayMessage('call',this)" class="btn btn-sm btn-outline-info"  value="10" id="call-data">
+                                 </button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row d-flex justify-content-center">
+                  <div class="col-md-4">
+                     <div class="card mb-4 shadow-sm">
+                        <h3 class="text-center bg-info p-2">Stress Rate</h3>
+                        <i class="fa fa-tachometer fa-5x text-center" aria-hidden="true"></i>
+                        <div class="card-body">
+                           <p class="card-text">People are more productive on days when they exercise before work.</p>
+                           <div class="d-flex justify-content-between align-items-center">
+                              <meter low="25" optimum="20" high="75" value="20" min="0" max="100" id="meterId" width="100%">80</meter>
+                              <button type="button" class="btn btn-sm ">
+                              <span>Stress Rate :</span>
+                              <input type="button" class="btn btn-sm btn-outline-info" onchange="displayMessage('stress',this)" value='20' id="stress-data">
+                              </button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="card mb-4 shadow-sm">
+                        <h3 class="text-center bg-info p-2">Position Time</h3>
+                        <i class="fa fa-universal-access fa-5x text-center" aria-hidden="true"></i>
+                        <div class="card-body">
+                           <p class="card-text">Taking breaks helps you stay focused for longer time</p>
+                           <div class="d-flex justify-content-between align-items-center">
+                              <div class="btn">
+                                 <button type="button" class="btn btn-sm btn-outline-success">Recomended : 30 Min</button>
+                                 <button type="button" class="btn btn-sm ">
+                                 <span>Current :</span>
+                                 <input type="button" class="btn btn-sm btn-outline-info" onchange="displayMessage('position',this)" value='60 Min' id="position-data">
+                                 </button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="card mb-4 shadow-sm">
+                        <h3 class="text-center bg-info p-2">Health Widget</h3>
+                        <i class="fa fa-coffee fa-3x text-center" aria-hidden="true"></i>
+                        <div class="card-body d-flex justify-content-center">
+                           <div class="d-flex flex-column bd-highlight mb-3">
+                              <div class="p-2 bd-highlight">
+                                 <i class="fa fa-volume-control-phone fa-2x " aria-hidden="true"></i>
+                                 <span class="text-center border border-info p-1 rounded-pill m-2">Call Duration : 10hrs</span>
+                              </div>
+                              <div class="p-2 bd-highlight">
+                                 <i class="fa fa-heartbeat fa-2x" aria-hidden="true"></i>
+                                 <span class="text-center border border-info p-1 rounded-pill m-2">Heart Rate : 80bpm</span>
+                              </div>
+                              <div class="p-2 bd-highlight text-center">
+                                 <i class="fa fa-thermometer-full fa-2x text-center" aria-hidden="true"></i>
+                                 <span class="text-center border border-info p-1 rounded-pill m-2">Stress Rate : Normal</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+      <script>
+         setInterval(function(){ 
+            
+             document.getElementById('heart-data').value = 60+Math.floor(Math.random() * 50); 
+             document.getElementById('call-data').value =parseInt(document.getElementById('call-data').value)+10;
+             document.getElementById('meterId').value =document.getElementById('stress-data').value =Math.floor(Math.random() * 100);    
+             document.getElementById('position-data').value=20;     
+             document.getElementById("tips-block").innerHTML = '';  
+             displayMessage('heartRate', document.getElementById('heart-data'));
+             displayMessage('call', document.getElementById('call-data'));
+             displayMessage('stress', document.getElementById('stress-data'));
+             displayMessage('position', document.getElementById('position-data'));
+             }, 7000);
+         
+         var messages = [{
+             "data": "Keep up the good work!",
+             "type": "call",
+             "threshold": "200",
+             "ribbon": "alert alert-success",
+             "id" : "callTime"
+         }, {
+             "data": "Breathe deeply. It will help you relax until your palpitations pass.!",
+             "type": "heartRate",
+             "threshold": "95",
+             "ribbon": "alert alert-danger",
+             "id" : "heartRate"
+         }, {
+             "data": "Keep a positive attitude. Your stress levels are increasing.",
+             "type": "stress",
+             "threshold": "70",
+             "ribbon": "alert alert-dark",
+             "id" : "streeRate"
+         }, {
+             "data": "Stretch and make a move",
+             "type": "position",
+             "threshold": "30",
+             "ribbon": "alert alert-primary",
+             "id" : "sittingPos"
+         }];
+         
+         document.getElementById("tips-block").innerHTML = "You are doing a great Job!!";
+         
+         function displayMessage(type, value) {
+             var filteredMsg = _.findWhere(messages, {
+                 type: type
+             });
+             if (JSON.parse(value.value) >= JSON.parse(filteredMsg.threshold)) {
+                 if (document.getElementById("tips-block").innerHTML=="You are doing a great Job!!")
+                 {
+                     document.getElementById("tips-block").innerHTML="";
+         
+                 }
+                 document.getElementById("tips-block").innerHTML =document.getElementById("tips-block").innerHTML+ "<br>"+filteredMsg.data;
+                 document.getElementById('ribbon').className = filteredMsg.ribbon;
+             }
+             else
+             {
+                 if(document.getElementById("tips-block").innerHTML=="You are doing a great Job!!")
+                 {
+                 document.getElementById("tips-block").innerHTML =document.getElementById("tips-block").innerHTML;
+                 document.getElementById('ribbon').className = "alert alert-primary";
+                 } else if (document.getElementById("tips-block").innerHTML=="")
+                 {
+                     document.getElementById("tips-block").innerHTML="You are doing a great Job!!"
+                     document.getElementById('ribbon').className = "alert alert-success";
+                 }
+             }
+         };
+         
+      </script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+</html>
